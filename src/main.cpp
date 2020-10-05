@@ -1,7 +1,31 @@
 #include <iostream>
+#include <fstream>
 #include <opencv2/core.hpp>
 #include <reconstructor.h>
 #include <pointsMatcher.h>
+
+
+/* Reference: https://answers.opencv.org/question/42770/how-to-read-matrix-from-text-file-to-mat-in-opencv/?answer=42806
+   To read data from a text file. 
+   filename is the name of the text file
+   rows and cols show dimensions of the matrix written in the text fil
+*/
+Mat ReadMatFromTxt(string filename, int rows,int cols)
+{
+    double m;
+    Mat out = Mat::zeros(rows, cols, CV_64FC1);//Matrix to store values
+
+    ifstream fileStream(filename);
+    int cnt = 0;//index starts from 0
+    while (fileStream >> m)
+    {
+        int temprow = cnt / cols;
+        int tempcol = cnt % cols;
+        out.at<double>(temprow, tempcol) = m;
+        cnt++;
+    }
+    return out;
+}
 
 int main(int argc, char* argv[])
 {
@@ -9,6 +33,7 @@ int main(int argc, char* argv[])
                              "{help     |                  | print this message}"
                              "{@image1  | ./img1.jpg       | image1 path}"
                              "{@image2  | ./img2.jpg       | image2 path}"
+                             "{K        | ./path/to/K.txt  | intrisic parameters matrix path}"
                              "{features | sift             | feature type , SIFT, SURF, OF_SPARSE, OF_DENSE}"
                              "{matcher  | bruteforce       | matcher type}"
                              );
@@ -46,7 +71,8 @@ int main(int argc, char* argv[])
 
     // Reconstruct the scene
     // Intrisic parameters of the camera
-    Mat K = (Mat_<double>(3,3) << 1520.400000, 0.000000, 246.87, 0.000000, 1525.900000, 302.320000, 0.000000, 0.000000, 1.000000);
+    string K_path = parser.get<string>("K");
+    Mat K = ReadMatFromTxt(K_path, 3, 3);
 
     reconstructor R = reconstructor(imgpts1, imgpts2, K);
 
