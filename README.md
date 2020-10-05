@@ -1,6 +1,6 @@
 # Non stereo scene Reconstruction
 
-Reconstruction of a scene given two non stereo images and the intrisic parameters matrix. Four different methods are implemented, the first three perform a sparse reconstruction using feature matching ([SIFT](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40) and [SURF](https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e)) or sparse optical flow ([Lucas-Kanade](https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method)). The fourth method performs a dense reconstruction using optical flow ([Farneback](https://www.geeksforgeeks.org/opencv-the-gunnar-farneback-optical-flow/)).
+Reconstruction of a scene given two non stereo images and the camera intrinsic parameters matrix. Four different methods are implemented, the first three perform a sparse reconstruction using feature matching ([SIFT](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40) and [SURF](https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e)) or sparse optical flow ([Lucas-Kanade](https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method)). The fourth method performs a dense reconstruction using optical flow ([Farneback](https://www.geeksforgeeks.org/opencv-the-gunnar-farneback-optical-flow/)).
 
 
 The workflow of this project is based on the examples provided in the book: **Mastering OpenCV with Practical Computer Vision Projects**.
