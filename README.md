@@ -56,28 +56,24 @@ An example would be:
 <br />
 <h3 align="center">SIFT: Matching points and Reconstructed Scene</h3>
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/Result_SIFT.png" alt="Logo">
   </a>
 </p>
 
 <h3 align="center">SURF: Matching points and Reconstructed Scene</h3>
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/Result_SURF.png" alt="Logo">
   </a>
 </p>
 
 <h3 align="center">Sparse Optical Flow: Points flow and Reconstructed Scene</h3>
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/Result_OF_SPARSE.png" alt="Logo">
   </a>
 </p>
 
 <h3 align="center">Dense Optical Flow: Image flow and Reconstructed Scene</h3>
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/Result_OF_DENSE.png" alt="Logo">
   </a>
 </p>
